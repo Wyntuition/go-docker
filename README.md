@@ -12,6 +12,12 @@ docker build -t my-golang-app .
 docker run -it --rm --name my-running-app my-golang-app
 ```
 
+## Build in container and dump artifacts to volume
+
+```
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.8 go build -v
+```
+
 ## Compile
 
 If you'd like to compile but not run the app, run the following.
